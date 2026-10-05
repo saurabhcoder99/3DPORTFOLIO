@@ -88,10 +88,10 @@ export const Hero = ({ onNavigate }) => {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-4 mb-8">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 w-full sm:w-auto mb-8">
               <button
                 onClick={() => onNavigate('projects')}
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-xs tracking-wider font-mono insta-btn focus:outline-none"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-xs tracking-wider font-mono insta-btn focus:outline-none w-full sm:w-auto"
               >
                 <span>EXPLORE PROJECTS</span>
                 <FiArrowRight className="w-4 h-4" />
@@ -100,7 +100,7 @@ export const Hero = ({ onNavigate }) => {
               <a
                 href={personalInfo.resumeUrl}
                 download="Saurabh_Kumar_Resume.pdf"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-xs tracking-wider font-mono glass-btn shadow-sm hover:border-[#dc2743]/50 transition-all transform hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-xs tracking-wider font-mono glass-btn shadow-sm hover:border-[#dc2743]/50 transition-all transform hover:-translate-y-0.5 w-full sm:w-auto text-center"
               >
                 <FiDownload className="w-4 h-4 text-[#dc2743]" />
                 <span>DOWNLOAD RESUME</span>
@@ -108,7 +108,7 @@ export const Hero = ({ onNavigate }) => {
 
               <button
                 onClick={() => onNavigate('contact')}
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-xs tracking-wider font-mono border border-[#833ab4]/30 bg-purple-500/10 hover:bg-purple-500/20 text-[#833ab4] dark:text-purple-300 transition-all transform hover:-translate-y-0.5 focus:outline-none"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-xs tracking-wider font-mono border border-[#833ab4]/30 bg-purple-500/10 hover:bg-purple-500/20 text-[#833ab4] dark:text-purple-300 transition-all transform hover:-translate-y-0.5 focus:outline-none w-full sm:w-auto"
               >
                 <FiMail className="w-4 h-4" />
                 <span>LET'S TALK</span>
@@ -169,23 +169,23 @@ export const Hero = ({ onNavigate }) => {
                 <img
                   src={personalInfo.photo}
                   alt="Saurabh Kumar - Data Analyst"
-                  className="w-full max-w-[340px] sm:max-w-[380px] h-[440px] sm:h-[480px] object-cover object-top rounded-[1.8rem] shadow-inner"
+                  className="w-full max-w-[280px] xs:max-w-[320px] sm:max-w-[380px] h-[380px] sm:h-[480px] object-cover object-top rounded-[1.8rem] shadow-inner"
                   loading="eager"
                 />
 
                 {/* Glass Gradient Overlay at bottom */}
-                <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl bg-white/90 dark:bg-[#120c18]/90 backdrop-blur-md border border-[#e1306c]/20 shadow-lg">
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 p-3 sm:p-3.5 rounded-2xl bg-white/90 dark:bg-[#120c18]/90 backdrop-blur-md border border-[#e1306c]/20 shadow-lg">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h3 className="font-display font-bold text-sm text-slate-900 dark:text-white">
+                      <h3 className="font-display font-bold text-xs sm:text-sm text-slate-900 dark:text-white">
                         Saurabh Kumar
                       </h3>
-                      <p className="text-[11px] font-mono text-[#dc2743] dark:text-[#f77737] font-semibold">
+                      <p className="text-[10px] sm:text-[11px] font-mono text-[#dc2743] dark:text-[#f77737] font-semibold">
                         Data Analyst • BI • Data Science
                       </p>
                     </div>
-                    <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[10px] font-mono font-bold">
-                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                    <div className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-[9px] sm:text-[10px] font-mono font-bold">
+                      <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-emerald-500 animate-ping" />
                       <span>OPEN TO WORK</span>
                     </div>
                   </div>
@@ -193,19 +193,19 @@ export const Hero = ({ onNavigate }) => {
               </div>
             </div>
 
-            {/* Floating Floating Metric Card 1: Top-Right */}
+            {/* Floating Metric Card 1: Top-Right */}
             <motion.div
               initial={{ y: -15, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="absolute -top-5 -right-3 sm:-right-6 glass-card px-4 py-2.5 rounded-2xl border border-[#e1306c]/30 shadow-lg flex items-center gap-3 backdrop-blur-xl"
+              className="absolute -top-3 sm:-top-5 -right-2 sm:-right-6 glass-card px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-[#e1306c]/30 shadow-lg flex items-center gap-2.5 sm:gap-3 backdrop-blur-xl scale-90 sm:scale-100 origin-top-right"
             >
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#f09433] to-[#dc2743] text-white flex items-center justify-center shadow-sm">
-                <FiBarChart2 className="w-5 h-5" />
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-[#f09433] to-[#dc2743] text-white flex items-center justify-center shadow-sm">
+                <FiBarChart2 className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <p className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold uppercase">Power BI & DAX</p>
-                <p className="text-xs font-bold text-slate-900 dark:text-white">Executive Dashboards</p>
+                <p className="text-[9px] sm:text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold uppercase">Power BI & DAX</p>
+                <p className="text-[11px] sm:text-xs font-bold text-slate-900 dark:text-white">Executive Dashboards</p>
               </div>
             </motion.div>
 
@@ -214,14 +214,14 @@ export const Hero = ({ onNavigate }) => {
               initial={{ y: 15, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.7, duration: 0.6 }}
-              className="absolute -bottom-6 -left-3 sm:-left-6 glass-card px-4 py-2.5 rounded-2xl border border-[#833ab4]/30 shadow-lg flex items-center gap-3 backdrop-blur-xl"
+              className="absolute -bottom-4 sm:-bottom-6 -left-2 sm:-left-6 glass-card px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl border border-[#833ab4]/30 shadow-lg flex items-center gap-2.5 sm:gap-3 backdrop-blur-xl scale-90 sm:scale-100 origin-bottom-left"
             >
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#dc2743] to-[#833ab4] text-white flex items-center justify-center shadow-sm">
-                <FiDatabase className="w-5 h-5" />
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-[#dc2743] to-[#833ab4] text-white flex items-center justify-center shadow-sm">
+                <FiDatabase className="w-4 h-4 sm:w-5 sm:h-5" />
               </div>
               <div>
-                <p className="text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold uppercase">LeetCode SQL 50</p>
-                <p className="text-xs font-bold text-slate-900 dark:text-white">Badge of Mastery</p>
+                <p className="text-[9px] sm:text-[10px] font-mono text-slate-500 dark:text-slate-400 font-semibold uppercase">LeetCode SQL 50</p>
+                <p className="text-[11px] sm:text-xs font-bold text-slate-900 dark:text-white">Badge of Mastery</p>
               </div>
             </motion.div>
 
