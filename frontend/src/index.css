@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #fff9f6;
+    --bg-secondary: #fff1f3;
+    --text-primary: #18181b;
+    --text-secondary: #52525b;
+    --accent-gold: #f09433;
+    --accent-red: #dc2743;
+    --accent-pink: #e1306c;
+    --accent-purple: #833ab4;
+    --card-bg: rgba(255, 255, 255, 0.92);
+    --card-border: rgba(225, 48, 108, 0.16);
+  }
+
+  .dark {
+    --bg-primary: #120c18;
+    --bg-secondary: #1c1026;
+    --text-primary: #fdf2f8;
+    --text-secondary: #cbd5e1;
+    --card-bg: rgba(26, 16, 36, 0.85);
+    --card-border: rgba(225, 48, 108, 0.25);
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+}
+
+/* Custom Instagram Sunset Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f09433, #dc2743, #bc1888);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #fcaf45, #fd1d1d, #833ab4);
+}
+
+/* Instagram Theme & Glassmorphism Utilities */
+@layer components {
+  .glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 10px 30px -5px rgba(225, 48, 108, 0.08);
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(225, 48, 108, 0.14);
+  }
+  .dark .glass-panel {
+    background: rgba(26, 16, 36, 0.75);
+    border: 1px solid rgba(225, 48, 108, 0.22);
+  }
+
+  .glass-btn {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(225, 48, 108, 0.2);
+    color: #18181b;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .dark .glass-btn {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fdf2f8;
+  }
+  .glass-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    border-color: rgba(225, 48, 108, 0.6);
+    box-shadow: 0 4px 20px rgba(225, 48, 108, 0.2);
+  }
+  .dark .glass-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(225, 48, 108, 0.6);
+    box-shadow: 0 0 20px rgba(225, 48, 108, 0.3);
+  }
+
+  .insta-btn {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 18px rgba(220, 39, 67, 0.35);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .insta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(220, 39, 67, 0.45);
+    filter: brightness(1.05);
+  }
+
+  .insta-gradient-text {
+    background: linear-gradient(45deg, #f09433 0%, #dc2743 40%, #cc2366 70%, #833ab4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .cyber-gradient-text {
+    background: linear-gradient(45deg, #f09433 0%, #dc2743 45%, #833ab4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .blue-gradient-text {
+    background: linear-gradient(135deg, #e1306c 0%, #833ab4 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 25px rgba(240, 148, 51, 0.35);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 25px rgba(131, 58, 180, 0.35);
+  }
+
+  .insta-story-ring {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    box-shadow: 0 8px 30px rgba(225, 48, 108, 0.35);
+  }
+
+  /* Warm ambient background grid */
+  .cyber-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(225, 48, 108, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(225, 48, 108, 0.05) 1px, transparent 1px);
+  }
+
+  .dark .cyber-grid {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(225, 48, 108, 0.08) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(225, 48, 108, 0.08) 1px, transparent 1px);
+  }
+}
+
+/* Animations */
+@keyframes instaPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(225, 48, 108, 0.5);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px 6px rgba(225, 48, 108, 0.3);
+  }
+}
+
+.animate-insta-pulse {
+  animation: instaPulse 3s infinite ease-in-out;
+}
